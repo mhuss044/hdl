@@ -1,0 +1,206 @@
+// test @ http://iverilog.com/index.php
+
+module main_circuit(A, B, C, D, E);
+	output D, E;
+	input A, B, C;
+	wire w1;
+	
+	and G1 (w1, A, B); // Optional gate instance name
+	not G2 (E, C);
+	or G3 (D, w1, E);
+initial
+	begin
+		$display("Hello world!");
+		$finish;
+	end
+endmodule
+
+
+module main_circuit(E, F, A, B, C, D);
+	output F, E;
+	input A, B, C, D;
+	
+	assign F = A&&B;
+	assign E = B;
+endmodule
+
+// Test bench for main_circuit
+module test_main_circuit;
+	wire F, E;
+	reg A, B, C, D;
+	main_circuit Circuit (E, F, A, B, C, D); // Instance name required
+
+	initial
+		begin
+			A = 1'b0; B = 1'b0; C = 1'b0; D = 1'b0;
+			#100
+			$display(F);
+			
+			#200 A = 1'b1; B = 1'b1; C = 1'b1; D = 1'b1;
+			#300												// Delay after var change is required, else not correct eval
+			$display(F);
+			
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+			#400
+			$display(F);
+
+		end
+	initial #100000 $finish;									// Make sure in very high excess of final instruction
+endmodule														// else wont print last print
+
+
+module main_circuit(E, F, A, B, C, D);
+	output F, E;
+	input A, B, C, D;
+	
+	assign F = A&&B;
+	assign E = B;
+endmodule
+
+// Test bench for main_circuit
+module test_main_circuit;
+	wire F, E;
+	reg A, B, C, D;
+	main_circuit Circuit (E, F, A, B, C, D); // Instance name required
+
+	initial
+		begin
+			A = 1'b0; B = 1'b0; C = 1'b0; D = 1'b0;
+			#100
+			$display(F);
+			
+			#200 A = 1'b1; B = 1'b1; C = 1'b1; D = 1'b1;
+			#300												// Delay after var change is required, else not correct eval
+			$display(F);
+			
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+			#400
+			$display(F);
+
+		end
+	initial #100000 $finish;									// Make sure in very high excess of final instruction
+endmodule														// else wont print last print
+
+
+
+
+
+
+
+
+
+
+
+
+module main_circuit(E, F, A, B, C, D);
+	output F, E;
+	input A, B, C, D;
+	
+	assign F = A&&B;
+	assign E = B;
+endmodule
+
+// Test bench for main_circuit
+module test_main_circuit;
+	wire F, E;
+	reg A, B, C, D;
+	main_circuit Circuit (E, F, A, B, C, D); // Instance name required
+
+	initial
+		begin
+$display("A B C D F");
+			A = 1'b0; B = 1'b0; C = 1'b0; D = 1'b0;
+#100
+$display(A," ", B," ", C," ", D," ", F);
+			#200 A = 1'b0; B = 1'b1; C = 1'b1; D = 1'b1;
+#300
+$display(A," ", B," ", C," ", D," ", F);
+			#400 A = 1'b0; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b0; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b0; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+			#300 A = 1'b1; B = 1'b0; C = 1'b1; D = 1'b1;
+#400
+$display(A," ", B," ", C," ", D," ", F);
+
+		end
+	initial #100000 $finish;
+endmodule
+
+
+
+
+
+
+
+
+
+
